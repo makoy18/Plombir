@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::domain('{admin}.plombir.hh')->group(function () {
+	Route::get('/', 'AdminController@index')->name('admin.main');
 });
+
+Route::get('/', 'MainController@index')->name('main');
 
 Auth::routes();
 
