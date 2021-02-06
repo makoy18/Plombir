@@ -20,8 +20,8 @@ class CategoriesController extends Controller
 
 	public function index()
     {
-    	$сategories = Category::where(['parent' => 0])->with('childrens')->get();
-        return view('category', compact('сategories'));
+    	$?ategories = Category::where(['parent' => 0])->with('childrens')->get();
+        return view('category', compact('?ategories'));
     }
 
 }

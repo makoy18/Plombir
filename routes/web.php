@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::domain('{admin}.plombir.hh')->group(function () {
+	Route::get('/', 'AdminController@index')->name('admin.main');
 });
 
 Route::get('/categories', 'CategoriesController@index')->name('category.categories');
 
 Route::get('/create', 'CategoriesController@create')->name('category.create');
+
+Route::get('/', 'MainController@index')->name('main');
 
 Auth::routes();
 
